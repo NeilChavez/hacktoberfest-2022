@@ -92,14 +92,14 @@ import Layout from '@layout'
 		font-size: 0.8rem;
 		cursor: pointer
 	}
-input[type='range']{
+input[type='range'].neil-input-range{
   background: #fff;
   border-radius: 0.3em;
   height: 7px;
   width: 100%;
   -webkit-appearance: none;
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"].neil-input-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width:  1.1rem;
   height: 1.1rem;
@@ -108,7 +108,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 	.neil-copy-icon:hover,
-	.copied{
+	.neil-copied{
 		background-color: #05386b;
 		color: #ffff;
 	}
@@ -149,11 +149,11 @@ const handleClick = e => {
 	}
 	if (e.target.matches('.neil-copy-icon')) {
 		navigator.clipboard.writeText($passwordTxt.textContent)
-		$copyIcon.classList.add('copied')
+		$copyIcon.classList.add('neil-copied')
 		$copyIcon.textContent = 'Copied!'
 		setTimeout(() => {
 			$copyIcon.textContent = 'Copy!'
-			$copyIcon.classList.remove('copied')
+			$copyIcon.classList.remove('neil-copied')
 		}, 1500)
 	}
 }
